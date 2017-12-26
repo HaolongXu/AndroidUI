@@ -1,5 +1,6 @@
 package activitytest.example.com.uiwidgettest;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -35,25 +36,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button:
-                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle("This is Dialig");
-                dialog.setMessage("Something important");
-                dialog.setCancelable(false);
-                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                ProgressDialog progressDialog  = new ProgressDialog(MainActivity.this);
+                progressDialog.setTitle("This is ProgressDialog");
+                progressDialog.setMessage("Loading...");
+                progressDialog.setCancelable(true);
+                progressDialog.show();
+                //AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                //dialog.setTitle("This is Dialig");
+                //dialog.setMessage("Something important");
+                //dialog.setCancelable(false);
+                //dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                  //  @Override
+                    //public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                });
+                    //}
+                //});
 
-                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int whcih) {
+                //dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                  //  @Override
+                    //public void onClick(DialogInterface dialog, int whcih) {
 
-                    }
-                });
+                    //}
+                //});
 
-                dialog.show();
+//                dialog.show();
                 break;
 
 
